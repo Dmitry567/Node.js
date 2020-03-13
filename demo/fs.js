@@ -24,9 +24,11 @@ fs.appendFile(filePath, "Hello Again!", err => {
 // Method writeFile overwrite existing content of the created file
 // appendFile to save old content of the file
 
-fs.readFile(filePath, (err, content) => {
+fs.readFile(filePath, "utf-8", (err, content) => {
   if (err) {
     throw err;
   }
-  console.log("Content: ", content);
+  console.log(content);
+  //const data = Buffer.from(content);
+  // console.log("Content: ", data.toString());
 });
